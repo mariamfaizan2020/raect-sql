@@ -10,11 +10,12 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.get("/",(req,res)=>{
-    let qry="INSERT INTO contact_db (name,email,contact) VALUES ('mariam','mariam@gmail.com','0339889')"
+    let qry="INSERT INTO contact_db (name,email,contact) VALUES ('test','test@gmail.com','039889')"
 // res.send("hello world")
 mysql.query(qry,(err,results)=>{
     console.log("error",err)
     console.log("result",results)
+    res.send("added")
 })
 })
 
