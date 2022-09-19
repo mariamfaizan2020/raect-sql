@@ -1,5 +1,5 @@
 const mysql=require("mysql2")
-const con=mysql.createConnection({
+const pool=mysql.createPool({
     host:"localhost",
     user:"root",
     password:"",
@@ -7,9 +7,9 @@ const con=mysql.createConnection({
     port:3306
 })
 
-con.connect((err)=>{
-    if(err) throw err;
-    console.log("connection created..!!")
-})
+// con.connect((err)=>{
+//     if(err) throw err;
+//     console.log("connection created..!!")
+// })
 
-module.exports.con=con;
+module.exports={pool};
